@@ -71,5 +71,5 @@ gem 'gemoji'
 gem 'kaminari'
 gem 'paranoia'
 gem 'impressionist'
-gem 'pry-byebug', group: :development
+gem 'pry-byebug'
 
