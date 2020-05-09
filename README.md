@@ -1,24 +1,28 @@
-# README
+# <アプリ名>
+- movieQ  映画のクイズサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+- 映画に関連するクイズを作成、遊ぶことのできるサイト。
+問題はフリー素材や絵文字を使ったイメージで出題。  
+（クイズに出てきた映画はコラムとして紹介する）
 
-Things you may want to cover:
+### サイトテーマ
+- クイズを通していろんな作品に興味を持ってもらう。
 
-* Ruby version
+### テーマを選んだ理由
+- 映画鑑賞が趣味で、多いときは週に3〜4の映画を見る映画好きのため。  
+親しみやすいゲームから多くの人に遊んでもらいたいため。
 
-* System dependencies
+### ターゲットユーザ
+- 映画に興味のある男女
+（特にSNSに関心のある年齢）
 
-* Configuration
+### 主な利用シーン
+- 映画の知識を試したり、SNSの話題が欲しい時に使用。
 
-* Database creation
+## 設計書
+https://docs.google.com/spreadsheets/d/1WPsSLks-lc95HvTcI9cFE5uOY4iHrYoquAGHSXJqiLk/edit#gid=180000090
+https://docs.google.com/spreadsheets/d/13TiX_MRz7C1PwDLbIdyulPJGZDMGUtfKWhOJireLr_k/edit#gid=1357686653
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1jq-_NCvQZQ2fxNUog4p3Q_5CM4sww8eSNGr_ueRckak/edit#gid=0>
