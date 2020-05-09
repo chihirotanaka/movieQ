@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'quizzes/new'
+  get 'quizzes/edit'
+  get 'users/edit'
   devise_for :users
 
   root 'quizes#index'

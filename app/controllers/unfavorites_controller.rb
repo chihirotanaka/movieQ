@@ -1,0 +1,2 @@
+class UnfavoritesController < ApplicationController
+end
