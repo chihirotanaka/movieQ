@@ -19,6 +19,6 @@ class Admins::MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:image, :title, :column, :year, :theme_title)
+    params.permit(:title, :column, :year, :theme_title, :image)
   end
 end

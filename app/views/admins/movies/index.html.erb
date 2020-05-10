@@ -1,27 +1,45 @@
+<div class="wrapper">
+  <div class="element">
+
+　<h2>movie情報作成</h2>
 <!--  映画情報新規登録 -->
-
-
-
-
-
-<!--  映画情報一覧 -->
-<table class="table table-default">
-  <tr>
-      <th>画像</th>
-      <th>作品名</th>
-      <th>コラム</th>
-      <th>制作年</th>
-      <th>お題</th>
-  </tr>
-  <tr>
-    <%= @movies.each do |movie| %>
-      <td><%= "#" %></td>
-      <td>
-        <%link_to "movie.title", edit_admins_movie_path %>
-      </td>
-      <td><%= movie.column %></td>
-      <td><%= movie.year %></td>
-      <td><%= movie.theme_title_i18n %></td>
+  <%= form_for(@movie, url: admins_movies_path, method: :post, local:true) do |f| %>
+    <p>画像</p>
+    <%= f.attachment_field :image %>
+    <p>お題</p>
+    <%= f.select  :theme_title, Movie.theme_titles.keys.map {|k| [I18n.t("enums.movie.theme_titles.#{k}"), k]} %><br />
+    <p>タイトル</p>
+    <%= f.text_field :title %>
+    <p>コラム</p>
+    <%= f.text_area :column %>
+    <p>制作年</p>
+    <%= f.text_field :year %><br />
+    <%= f.submit "作成" %>
     <% end %>
-  </tr>
-</table>
+
+  </div>
+
+<div class="element">
+<!--  映画情報一覧 -->
+    <table class="table table-default">
+      <tr>
+        <th>画像</th>
+        <th>作品名</th>
+        <th>コラム</th>
+        <th>制作年</th>
+        <th>お題</th>
+      </tr>
+      <tr>
+      <%= @movies.each do |movie| %>
+        <td><%= image_tag attachment_url(@movie, :image, :fill, 50, 50, format:"jpg") %></td>
+        <td>
+          <%link_to "#", edit_admins_movie_path %>
+        </td>
+        <td><%= "#" %></td>
+        <td><%= movie.year %></td>
+        <td><%= movie.theme_title_i18n %></td>
+      <% end %>
+      </tr>
+    </table>
+  </div>
+</div>
