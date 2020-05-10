@@ -1,9 +1,11 @@
 class Movie < ApplicationRecord
+  attachment :image_id
+  belongs_to :quiz
 
-	belongs_to :quiz
-	enum theme_title:{
-  	  全米映画TOP5:0,
-  	  日本映画TOP5:1,
-  	  ジブリ映画TOP5:2,
-    }
+  enum theme_title:{
+  	  	USATOP5:0,
+  	  	JATOP5:1,
+  	  	GhibliTOP5:2,
+  	  	DisneyTOP5:3,
+    	}
 end

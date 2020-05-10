@@ -1,1 +1,27 @@
-<h1>映画編集ボタンtop</h1>
+<!--  映画情報新規登録 -->
+
+
+
+
+
+<!--  映画情報一覧 -->
+<table class="table table-default">
+  <tr>
+      <th>画像</th>
+      <th>作品名</th>
+      <th>コラム</th>
+      <th>制作年</th>
+      <th>お題</th>
+  </tr>
+  <tr>
+    <%= @movies.each do |movie| %>
+      <td><%= "#" %></td>
+      <td>
+        <%link_to "movie.title", edit_admins_movie_path %>
+      </td>
+      <td><%= movie.column %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie.theme_title_i18n %></td>
+    <% end %>
+  </tr>
+</table>
