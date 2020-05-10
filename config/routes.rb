@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   # ユーザー
   devise_for :users
-  root 'quizes#top'
+  root 'quizzes#top'
   get 'users/:id/home'=>'users#home'
   resources :users, only:[:edit, :update, :destroy]
-  resources :quizzes, only:[:create, :edit, :update, :destroy] do
+  resources :quizzes, only:[:new, :create, :edit, :update, :destroy] do
       resource :favorites, only:[:create, :destroy]
       resource :unfavorites, only:[:create, :destroy]
   end
@@ -21,9 +21,7 @@ Rails.application.routes.draw do
     post  'admins/sign_in' => 'admins/sessions#create' ,  as: :admin_session
     delete 'admins/log_out' => 'admins/sessions#destroy' ,  as: :destroy_admin_session
   end
-
   namespace :admins do
-    # get '/top'=>'top#top'
-    resources :movies, only:[:create, :edit, :update]
+    resources :movies, only:[:index, :create, :edit, :update]
   end
 end

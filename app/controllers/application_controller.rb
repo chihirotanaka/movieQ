@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :device_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
+  #sign_in後のredirect先。
     def after_sign_in_path_for(resource)
       root_path
     end
-
-  #sign_out後のredirect先変更する。rootパスへ。rootパスはhome topを設定済み。
+#sign_out後のredirect先。
     def after_sign_out_path_for(resource)
       root_path
     end

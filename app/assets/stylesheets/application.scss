@@ -17,3 +17,28 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-aline: center;
+}
+
+header {
+  padding: 10px 0;
+  background-color: #fff;
+  margin-top: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #333;
+  margin-top: auto;
+
+  p {
+  color: #fff;
+  }
+}
