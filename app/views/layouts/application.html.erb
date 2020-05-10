@@ -11,22 +11,22 @@
 <!-- header -->
     <header>
       <nav class="nav navbar-nav navbar-left">
-        <span style="color: #333">movieQ[管理]</span>
+        <span style="color: #333">movieQ</span>
       </nav>
       <nav>
           <ul class="nav navbar-nav navbar-right">
 
     <!--ユーザーサインイン時　-->
             <% if user_signed_in? %>
-              <li><%= link_to " Home",user_path(current_customer) , class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to " Home", root_path, class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " クイズをつくる", new_quiz_path, class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " 挑戦", "#", class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " 設定", "#", class: "btn btn-default btn-sm" %></li>
-              <li> <%= link_to " ログアウト", destroy_customer_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "btn btn-default btn-sm" %></li>
+              <li> <%= link_to " ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "btn btn-default btn-sm" %></li>
     <!--管理サインイン時　-->
             <% elsif admin_signed_in? %>
-              <li><%= link_to " TOP画面" , admins_movies_path ,  class: "btn btn-default btn-sm" %></li>
-              <li> <%= link_to " 管理者ログアウト" , destroy_admin_session_path ,method: :delete , class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to " TOP画面" , admins_movies_path ,  class: %></li>
+              <li> <%= link_to " 管理者ログアウト" , destroy_admin_session_path ,method: :delete , class: "#" %></li>
     <!--ユーザーサインアウト時　-->
             <% else %>
               <li><%= link_to " このサイトについて", "#", class: 'btn btn-default btn-sm' %></li>

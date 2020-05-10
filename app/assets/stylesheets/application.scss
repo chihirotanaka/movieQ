@@ -23,13 +23,17 @@ body,
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  text-aline: center;
 }
 
 header {
   padding: 10px 0;
   background-color: #fff;
   margin-top: auto;
+  color: #333;
+
+  nav {
+  font-size: 24px;
+  }
 }
 
 footer {

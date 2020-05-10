@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  acts_as_paranoid
+  acts_as_paranoid without_default_scope: true
+  has_many :quizzes, dependent: :destroy
+
+  with_options presence: true do
+  validates :name
+  validates :email
+  end
 
 end

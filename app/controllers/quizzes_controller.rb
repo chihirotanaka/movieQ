@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
 
 # サイトtopページ
-  def top
+  def index
   end
 
 # ユーザー制作ページ
