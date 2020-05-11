@@ -2,11 +2,18 @@ class Admins::MoviesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-  	@movie =Movie.new(movie_params)
-  	@movies =Movie.all
+  	@newmovie = Movie.new(movie_params)
+  	@movies = Movie.all
   end
 
   def create
+    @newmovie = Movie.new(movie_params)
+    @movies = Movie.all
+    if @newmovie.save
+       redirect_to  admins_movies_path
+       flash[:movie_new] = "作品を登録しました!!"
+       logger.debug @example.errors.inspect
+    end
   end
 
   def edit

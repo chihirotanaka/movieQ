@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # ユーザー
   devise_for :users
   root 'quizzes#top'
-  get 'users/:id/home'=>'users#home'
+  get 'users/:id/home'=>'users#home', as: :user_home
   resources :users, only:[:edit, :update, :destroy]
   resources :quizzes, only:[:new, :create, :edit, :update, :destroy] do
       resource :favorites, only:[:create, :destroy]

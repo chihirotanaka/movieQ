@@ -1,1 +1,18 @@
-<h1>top</h1>
+<h2>今まで作ったクイズ</h2>
+<!-- クイズ一覧 -->
+<div class="element">
+    <table class="table table-default">
+      <tr>
+        <th>No.</th>
+        <th>絵文字</th>
+        <th>問題文Q</th>
+      </tr>
+      <tr>
+        <% @quizzes(current_user).each do |q| %>
+          <td><%= q.id %></td>
+          <td><%= q.emoji%></td>
+          <td><%= q.question%></td>
+        <% end %>
+      </tr>
+    </table>
+  </div>

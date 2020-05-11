@@ -21,7 +21,6 @@
               <li><%= link_to " Home", root_path, class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " クイズをつくる", new_quiz_path, class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " 挑戦", "#", class: "btn btn-default btn-sm" %></li>
-              <li><%= link_to " 設定", "#", class: "btn btn-default btn-sm" %></li>
               <li> <%= link_to " ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "btn btn-default btn-sm" %></li>
     <!--管理サインイン時　-->
             <% elsif admin_signed_in? %>
