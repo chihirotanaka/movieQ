@@ -1,14 +1,28 @@
 class QuizzesController < ApplicationController
+  before_action :authenticate_user!
 
 # サイトtopページ
   def index
   end
 
-# ユーザー制作ページ
+# クイズ制作ページ
   def new
+    @newquiz = Quiz.new
+  end
+
+  def create
+    @newquiz = Quiz.new(post_quiz_params)
+    @newquiz.user.id = current_user.id
+    if @newquizze.save
+    redirect_to user_home_path
+    else
+    render back
+    end
   end
 
   def edit
+    @quiz = Quiz.find(params[:id])
+    @quizzes = movie.quizzes.all
   end
 
   def update
@@ -25,5 +39,10 @@ class QuizzesController < ApplicationController
   end
 
   def total
+  end
+
+  private
+  def post_quiz_params
+    params.require(:quiz).permit(:question, :emoji, :answer, :answer2, :answer3)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_101355) do
+ActiveRecord::Schema.define(version: 2020_05_12_033450) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 2020_05_10_101355) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.integer "title"
-    t.string "column"
-    t.integer "year"
+    t.string "title"
+    t.text "column"
+    t.integer "year", default: 0, null: false
     t.integer "theme_title", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_101355) do
     t.string "answer3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "movie_title"
   end
 
   create_table "unfavorites", force: :cascade do |t|

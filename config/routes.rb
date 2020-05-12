@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     delete 'admins/log_out' => 'admins/sessions#destroy' ,  as: :destroy_admin_session
   end
   namespace :admins do
-    resources :movies, only:[:index, :create, :edit, :update]
+    resources :movies, only:[:index, :create, :edit, :update, :destroy]
   end
 end

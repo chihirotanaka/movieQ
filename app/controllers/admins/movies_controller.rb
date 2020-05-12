@@ -2,7 +2,7 @@ class Admins::MoviesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-  	@newmovie = Movie.new(movie_params)
+  	@newmovie = Movie.new
   	@movies = Movie.all
   end
 
@@ -12,7 +12,8 @@ class Admins::MoviesController < ApplicationController
     if @newmovie.save
        redirect_to  admins_movies_path
        flash[:movie_new] = "作品を登録しました!!"
-       logger.debug @example.errors.inspect
+    else
+      render 'index'
     end
   end
 
@@ -24,8 +25,14 @@ class Admins::MoviesController < ApplicationController
   	@movie =Movie.find(params[:id])
   end
 
+  def destroy
+    movie =Movie.find(params[:id])
+    movie.destroy
+    redirect_to admins_movies_path
+  end
+
   private
   def movie_params
-    params.permit(:title, :column, :year, :theme_title, :image)
+    params.require(:movie).permit(:title, :column, :year, :theme_title, :image)
   end
 end

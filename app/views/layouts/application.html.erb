@@ -18,7 +18,7 @@
 
     <!--ユーザーサインイン時　-->
             <% if user_signed_in? %>
-              <li><%= link_to " Home", root_path, class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to " Home", user_home_path(current_user), class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " クイズをつくる", new_quiz_path, class: "btn btn-default btn-sm" %></li>
               <li><%= link_to " 挑戦", "#", class: "btn btn-default btn-sm" %></li>
               <li> <%= link_to " ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "btn btn-default btn-sm" %></li>
@@ -41,7 +41,7 @@
       <div id="wrapper">
       <main><%= yield %></main>
 <!-- footer -->
-      <footer><p class="text">© PRESENTED by movieQ.</p></footer>
+      <footer><p class="text">©2020 PRESENTED by movieQ.</p></footer>
 
       </wrapper>
     </div>

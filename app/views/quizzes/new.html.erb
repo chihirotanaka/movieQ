@@ -1,1 +1,23 @@
-<h1>クイズ新規作成</h1>
+<h1>クイズをつくる</h1>
+
+<%= form_for(@newquiz, url: quizzes_path, method: :post) do |f| %>
+<div class="#">
+   	<p>お題を選ぶ</p>
+    <%= f.text_field :movie_id %>
+   </div>
+    <p>作品を選ぶ</p>
+    <%= f.text_field :movie_id %>
+   	<p>絵文字を選ぶ1</p>
+   	<%= f.text_field :emoji %><%= f.text_field :emoji %><%= f.text_field :emoji %>
+   	<p>問題文を決める</p>
+   	<%= f.text_field :question %>
+   	<p>選択肢</p>
+    <p style="font-size:4px">※ここに答えを入れてください</p>
+  	 <%= f.text_field :answer %>
+   	<p>選択肢2</p>
+   	<%= f.text_field :answer2 %>
+   	<p>選択肢3</p>
+
+   <%= f.text_field :answer3 %>
+  <%= submit_tag 'つ く る' %>
+<% end %>
