@@ -1,13 +1,7 @@
 class Movie < ApplicationRecord
   	attachment :image
   	has_many :quizzes
-  	enum theme_title: {
-  	   "---":      	0,
-  	   USATOP5:     1,
-  	   JATOP5:     	2,
-  	   GhibliTOP5: 	3,
-  	   Topicwork5:  4,
-    }
+    has_one :theme, dependent: :destroy
 
     enum year: {
      "----":0,

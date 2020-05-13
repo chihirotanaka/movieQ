@@ -10,3 +10,17 @@ Admin.create(
 	email: "eee@eee",
 	password: "eeeeee"
 	)
+
+# お題
+Theme.create!(
+     theme: "USATOP5"
+ )
+Theme.create!(
+     theme: "JATOP5"
+ )
+Theme.create!(
+     theme: "GhibliTOP5"
+ )
+Theme.create!(
+     theme: "Topicwork5"
+ )

@@ -4,14 +4,16 @@ class Admins::MoviesController < ApplicationController
   def index
   	@newmovie = Movie.new
   	@movies = Movie.all
+    @themes = Theme.all
   end
 
   def create
     @newmovie = Movie.new(movie_params)
     @movies = Movie.all
+    @themes = Theme.all
     if @newmovie.save
        redirect_to  admins_movies_path
-       flash[:movie_new] = "作品を登録しました!!"
+       flash[:notice] = "作品を登録しました!!"
     else
       render 'index'
     end

@@ -9,13 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 <!-- header -->
-    <header>
-      <nav class="nav navbar-nav navbar-left">
-        <span style="color: #333">movieQ</span>
-      </nav>
+  <header class="navbar navbar-link">
+      <a href="/", style="color:#333 text-left">movieQ</a>
       <nav>
           <ul class="nav navbar-nav navbar-right">
-
     <!--ユーザーサインイン時　-->
             <% if user_signed_in? %>
               <li><%= link_to " Home", user_home_path(current_user), class: "btn btn-default btn-sm" %></li>
@@ -41,7 +38,7 @@
       <div id="wrapper">
       <main><%= yield %></main>
 <!-- footer -->
-      <footer><p class="text">©2020 PRESENTED by movieQ.</p></footer>
+      <footer><p class="text">©2020 Presented by movieQ.</p></footer>
 
       </wrapper>
     </div>

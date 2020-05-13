@@ -1,23 +1,34 @@
+<div class="container">
+
 <h1>クイズをつくる</h1>
 
-<%= form_for(@newquiz, url: quizzes_path, method: :post) do |f| %>
-<div class="#">
-   	<p>お題を選ぶ</p>
-    <%= f.text_field :movie_id %>
-   </div>
-    <p>作品を選ぶ</p>
-    <%= f.text_field :movie_id %>
-   	<p>絵文字を選ぶ1</p>
-   	<%= f.text_field :emoji %><%= f.text_field :emoji %><%= f.text_field :emoji %>
-   	<p>問題文を決める</p>
-   	<%= f.text_field :question %>
-   	<p>選択肢</p>
-    <p style="font-size:4px">※ここに答えを入れてください</p>
-  	 <%= f.text_field :answer %>
-   	<p>選択肢2</p>
-   	<%= f.text_field :answer2 %>
-   	<p>選択肢3</p>
+　　<%= form_for(@newquiz, url: quizzes_path, method: :post) do |f| %>
 
-   <%= f.text_field :answer3 %>
-  <%= submit_tag 'つ く る' %>
-<% end %>
+   	  <%= f.label "お題をえらぶ" %><br />
+      <%= f.collection_select :movie_id, @movies, :id, :theme_title_i18n %><br />
+
+      <%= f.select :theme_title, @ThemeTitles.keys.to_a, {} %>
+
+      <%= f.label "好きなタイトルを選んでください" %><br />
+      <%= f.collection_select :movie_id, @movies, :id, :title %><br />
+
+   	  <%= f.label "絵文字をえらぶ" %><br />
+   	  1<%= f.text_field :emoji %><br />
+      2<%= f.text_field :emoji %><br />
+      3<%= f.text_field :emoji %><br />
+
+   	  <%= f.label "問題文をつくる" %><br />
+   	  <%= f.text_field :question %><br />
+
+   	  <%= f.label "選択肢をつくる" %><br />
+      <p style="font-size:8px">※一番上を答えにしてください！</p><br />
+  	  1<%= f.text_field :answer %><br />
+   	  2<%= f.text_field :answer2 %><br />
+      3<%= f.text_field :answer3 %><br />
+
+      <%= submit_tag '作成する' %>
+  <% end %>
+</div>
+
+
+

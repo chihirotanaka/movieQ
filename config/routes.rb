@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+  end
   # ユーザー
   devise_for :users
   root 'quizzes#top'
@@ -23,5 +25,6 @@ Rails.application.routes.draw do
   end
   namespace :admins do
     resources :movies, only:[:index, :create, :edit, :update, :destroy]
+    resources :themes, only:[:new, :create]
   end
 end
