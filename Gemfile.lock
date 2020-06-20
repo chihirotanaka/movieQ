@@ -138,8 +138,6 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    impressionist (2.0.0)
-      nokogiri (~> 1)
     io-like (0.3.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
@@ -335,7 +333,6 @@ DEPENDENCIES
   enum_help
   font-awesome-rails
   gemoji
-  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

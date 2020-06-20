@@ -75,7 +75,6 @@ gem "refile-mini_magick"
 gem 'gemoji'
 gem 'kaminari'
 gem 'paranoia'
-gem 'impressionist'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'devise-i18n'
