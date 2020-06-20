@@ -1,0 +1,212 @@
+// Place all the styles related to the playquizzes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+#quiz-wrapper {
+	height: 100vh;
+}
+
+/*全体
+-------------------------------*/
+#playbox,#resultbox,#totalbox {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+  background: linear-gradient(skyblue, white);
+  text-align: center;
+  color: #333;
+}
+
+.quiz-body {
+  min-height: 400px;
+}
+
+/*quiz-header footer*/
+
+.quiz-header {
+  width: 100%;
+  padding: 20px;
+  background-color: gold;
+  margin-top: auto;
+  flex: 1;
+}
+
+.quiz-footer {
+  padding: 20px;
+  background-color: #0bd;
+  margin-top: auto;
+  flex: 1;
+}
+
+/*playquiz
+--------------------------------*/
+.title-box {
+    margin-top:35px;
+    margin: auto;
+
+	p {
+      padding: 3px;
+      text-align: center;
+      font-size: 5rem;
+      color: white;
+    }
+}
+
+ /* 絵文字 */
+.emogi-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+  p {
+      padding: 16px;
+      margin-right: 28px;
+      font-size: 6rem;
+  }
+}
+/* 問題 */
+.question-box {
+    margin-top: 22px;
+    padding: 0 4%;
+
+  p {
+      font-size: 2rem;
+      text-align: center;
+      color: #333;
+  }
+}
+
+/* 選択肢 */
+.choice-box {
+  width: auto;
+  margin-bottom: 15px;
+
+  .choice-button {
+      background: #333;
+      color: white;
+      padding: 18px;
+      margin-bottom: 5px;
+    /*border-radius: 60px;*/
+      font-size: 2rem;
+      width: 100%;
+
+  &:hover {
+      background: white;
+      color: #333;
+    }
+  }
+}
+/*result
+-----------------------------*/
+.result-box {
+  text-align: center;
+
+
+  .result-p {
+      color: white;
+      padding: 40px 0 20px 0;
+      font-size: 7rem;
+ }
+}
+.result-column {
+  padding:2px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  width: 90%;
+  height: 142px;
+  background: white;
+
+  ul,li {
+      list-style-type: none;
+  }
+  .movie-img{
+      display: inline-block;
+      border: 3px solid white;
+  }
+
+  .movie-text {
+      margin: 0 10px 0 0;
+
+    p {
+        padding-bottom: 10px;
+        list-style: none;
+    }
+  }
+}
+.result-button{
+  padding: 20px;
+}
+
+/*total
+-----------------------------*/
+#totalbox {
+  .total-title {
+      padding: 10px;
+      margin-top: 50px;
+      font-size: 2rem;
+      font-weight: bold;
+  }
+
+  .total-result {
+      padding: 40px 0 10px 0;
+
+      .total-text,h4,h5 {
+          color: white;
+      }
+      p,h4,h5 {
+          padding: 10px 0 15px 0;
+      }
+      .total-text {
+          font-size: 40px;
+      }
+
+        .title {
+          width: 75%;
+          padding: 7px;
+          margin: 0 auto;
+          font-size: 1.5rem;
+          border: solid 1.3p x orangered;
+          background-color: darkred;
+          border-radius: 60px;
+          color: white;
+        }
+  }
+
+  .moviebox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: auto;
+        height: 300;
+        padding: 10px;
+
+      .jadge {
+          color: orangered;
+          font-size: 30px;
+      }
+      p {
+          font-size: 12px;
+      }
+  }
+}
+
+.add_style {
+  margin-left: auto;
+}
+
+.social {
+  padding: 20px 0 0 10px;
+}
+
+.total-button {
+  text-align: center;
+  padding: 15px;
+}

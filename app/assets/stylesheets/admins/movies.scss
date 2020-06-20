@@ -2,13 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.wrapper{
 
-    display: flex;
-    justify-content: flex-start;    /*左揃え*/
-    justify-content: flex-end;      /*右揃え*/
-    justify-content: center;        /*中央揃え*/
-    justify-content: space-between; /*均等に間隔をあける*/
-    justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
+/*movie index
+-----------------------------*/
+#moviewrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 4%;
+	}
+
+.element1 {
+	width: 23%;
+	border-right: 1px dashed lightgray;
+}
+.element2 {
+    margin-top: 35px;
+	width: 73%;
 }
 
+/*movie edit
+-----------------------------*/
+#editwrapper {
+	padding: 0 4%;
+
+	movieform {
+	  margin: 0 auto;
+	}
+}

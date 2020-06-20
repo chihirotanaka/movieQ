@@ -1,5 +1,38 @@
+<div class="top-container">
+	<div class="quiz-top-contents">
+		<h1 class="movieQ">movieQ</h1>
+		<p>あなたの映像作品の知識をクイズで試そう！<br />
+		ログインするとクイズを作成することができます。</p>
 
-<h1 style="font-size: 80px">movieQ</h1>
+		<p><%= link_to 'クイズに挑戦する', play_quiz_path, class: "button1" %></p>
+	  <% if user_signed_in? %>
+		<p><%= link_to 'クイズをつくる', new_quiz_path, class: "button2" %></p>
+	  <% end %>
+	</div><!-- quiz-top-contant -->
+</div><!-- top-container -->
 
-<p>あなたの映像作品の知識をクイズで試そう！<br>
-	ログインするとクイズを作成することができます。</p>
+<div class="about-container" id="about">
+
+	<div class="dounyu">
+		<h3>このサイトについて</h3>
+	<div class="circle1">
+	<span>movieQとは？<br>
+		movieQは映画・アニメのクイズを絵文字を使用して出題します。絵文字から作品をイメージして問題に挑戦しよう！</span>
+    </div>
+
+    <div class="circle2">
+	<span>できること<br>
+		<ol><li>[クイズに挑戦する]
+		      あなたの知識をクイズで試すことができます。<br>全問正解してmovie王をめざせ！
+		    </li>
+			<li>[クイズをつくる]ログインすると自分のオリジナルクイズを作成できます！</li>
+		</ol></span>
+    </div>
+
+    <div class="circle3">
+	<span>クイズをつくろう！<br>お題を選んでクイズをつくろう！<br>クイズはいつでも<br>編集・削除することができます。<br>あなたの好きな作品を<br>たくさんの人に遊んでもらおう！</span>
+    </div>
+
+   </div>
+
+</div> <!-- about-container -->

@@ -1,34 +1,11 @@
-<div class="container">
+<div id="create-container">
+  <div class="panel panel-default">
+    <div class="panel-heading lead">クイズをつくろう</div>
+        <div class="panel-body">
 
-<h1>クイズをつくる</h1>
+    <!-- error-message -->
+<%= render 'quizzes/quiz_form', quiz: @newquiz %>
 
-　　<%= form_for(@newquiz, url: quizzes_path, method: :post) do |f| %>
-
-   	  <%= f.label "お題をえらぶ" %><br />
-      <%= f.collection_select :movie_id, @movies, :id, :theme_title_i18n %><br />
-
-      <%= f.select :theme_title, @ThemeTitles.keys.to_a, {} %>
-
-      <%= f.label "好きなタイトルを選んでください" %><br />
-      <%= f.collection_select :movie_id, @movies, :id, :title %><br />
-
-   	  <%= f.label "絵文字をえらぶ" %><br />
-   	  1<%= f.text_field :emoji %><br />
-      2<%= f.text_field :emoji %><br />
-      3<%= f.text_field :emoji %><br />
-
-   	  <%= f.label "問題文をつくる" %><br />
-   	  <%= f.text_field :question %><br />
-
-   	  <%= f.label "選択肢をつくる" %><br />
-      <p style="font-size:8px">※一番上を答えにしてください！</p><br />
-  	  1<%= f.text_field :answer %><br />
-   	  2<%= f.text_field :answer2 %><br />
-      3<%= f.text_field :answer3 %><br />
-
-      <%= submit_tag '作成する' %>
-  <% end %>
-</div>
-
-
-
+    </div><!--panel-body-->
+  </div><!--panel panel-default-->
+</div><!--create-container-->

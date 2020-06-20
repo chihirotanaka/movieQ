@@ -16,34 +16,81 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+@import "font-awesome";
 
-body,
-#wrapper {
+/*全体　footer固定
+---------------------------*/
+html {
+  height: 100%;
+}
+body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
-header {
-  padding: 10px 0;
-  background-color: #fff;
-  margin-top: auto;
+#body-content {
+  min-height: 350px;
   color: #333;
+}
 
-  nav {
-  font-size: 24px;
+/*header
+---------------------------*/
+header {
+  width: 100%;
+  background-color: gold;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-top: auto;
+
+  .logo {
+    text-decoration: none;
   }
+}
+.navwrapper {
+  maxwidth: 1100px;
+  margin: 0 auto;
+  padding: 0 12%;
+}
+/*nav
+---------------------------*/
+.main-nav {
+  display: flex;
+  font-size: 1.6rem;
+  margin-top:32px;
+  list-style: none;
+
+  li {
+    margin-left: 36px;
+  }
+
+  a {
+    color: #333;
+  }
+
+  a:hover {
+    color: #0bd;
+  }
+}
+
+/*footer
+---------------------------*/
+.subfooter {
+  padding: 15px;
+  background-color: gold;
+  margin-top: auto;
 }
 
 footer {
   text-align: center;
+  background-color: #0bd;
   padding: 50px 0;
-  background-color: #333;
-  margin-top: auto;
+  flex: 1;
 
   p {
-  color: #fff;
+    color: #fff;
   }
 }

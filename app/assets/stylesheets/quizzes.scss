@@ -2,8 +2,107 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container{
-　　width:700px;
-　　margin-right: auto;
-　　margin-left : auto;
+/*top-container
+-------------------------------------*/
+.top-container {
+}
+.quiz-top-contents {
+    text-align: center;
+    height: 400px;
+    margin-top: 120px;
+
+	h1 {
+		font-size: 8rem;
+		}
+	p{
+		margin: 10px 0 40px;
+		padding:4px 6px;
+		font-size: 1.4rem;
+	}
+}
+
+.button1,.button2 {
+	font-size: 2rem;
+	border-radius: 70px;
+}
+.button1 {
+	padding: 18px 32px;
+	color: white;
+	background: #0bd;
+	&:hover {
+	    background: white;
+	    border: 2px solid #0bd;
+	    color: #0bd;
+		text-decoration: none;
+		}
+}
+
+.button2 {
+	padding: 18px 44px;
+	color: white;
+	background: gold;
+	&:hover {
+	    background: white;
+	    border: 2px solid gold;
+	    color: gold;
+		text-decoration: none;
+		}
+}
+
+/*about-container
+-------------------------------------*/
+.about-container {
+
+  background-color: Cornsilk;
+  border-top: 1px solid gold;
+  width: 100%;
+  height: auto;
+
+
+	.dounyu {
+	  text-align: center;
+    height: auto;
+	}
+}
+
+.circle1,.circle2,.circle3 {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: solid 3px skyblue;
+  background: #0bd;
+
+  span {
+	  position: absolute;
+	  display: inline-block;
+	  text-align: center;
+	  left: 0;
+	  top: 50%;
+	  -webkit-transform: translateY(-50%);
+	  transform: translateY(-50%);
+	  width :300px;
+	  text-align:center;
+  }
+}
+/*new create
+-------------------------------------*/
+#create-container {
+  padding: 0 8%;
+  margin-top: 20px;
+  text-align: center;
+}
+.emoji-field {
+	height: 110%;
+}
+
+
+.required {
+	color: white;
+	padding: 4px;
+	border-radius: 10px;
+	border: 0.5px solid  red;
+	background-color: darkred;
+	font-size: 1px;
 }

@@ -1,4 +1,5 @@
 class Theme < ApplicationRecord
-	belongs_to :movie
-	belongs_to :quiz
+	has_many :movies, dependent: :destroy
+    has_many :quizzes, dependent: :destroy
+	validates :theme, presence: true
 end

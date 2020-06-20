@@ -1,0 +1,35 @@
+<div class="quiz-header"></div>
+  <div id="playbox">
+
+	<div class="title-box">
+		<p><span style=" font-size:3px">クエスチョン</span><br>
+		<strong>Q<%= session[:quiz_num]+1 %></strong></p>
+		<p style="font-size:2rem">絵文字から作品をイメージして答えよう！</p>
+	</div>
+
+	<div class="emogi-container">
+	    <div class="emoji-box">
+			<p><%= @quiz.emoji %></p>
+		</div>
+		<div class="emoji-box">
+		    <p><%= @quiz.emoji2 %></p>
+		</div>
+		<div class="emoji-box">
+			<p><%= @quiz.emoji3 %></p>
+		</div>
+	</div>
+
+	<div class="question-box">
+		<p>Q:<%= @quiz.question %></p>
+	</div>
+
+    <div class="choice-box">
+    	<%= form_tag result_quiz_path, method: :get do %>
+        <% @options.each do |option| %>
+    	<%= submit_tag option, name:"choice", class: "choice-button" %>
+    	    <% end %>
+    	<% end %>
+	</div>
+
+  </div><!---playbox--->
+<div class="quiz-footer"></div><!--quiz-footer-->

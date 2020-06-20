@@ -1,0 +1,9 @@
+<% if quiz.errors.any? %>
+        <div class="alert alert-danger">
+	        <ul style="list-style: none;">
+	          <% quiz.errors.full_messages.each do |message|%>
+	          <li><%= message %></li>
+	          <% end %>
+	        </ul>
+        </div>
+<% end %>

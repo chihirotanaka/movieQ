@@ -1,2 +1,8 @@
-<h1>映画情報更新</h1>
-<%= render 'movies/form', movie: @movie %>
+<div id="editwrapper">
+  <p id="notice"><strong><%= flash[:notice] %></strong></p>
+      <div class="movieform">
+        <label>映画情報更新</label>
+
+            <%= render 'admins/movies/newform', movie: @movie %>
+      </div>
+</div>
