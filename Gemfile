@@ -84,7 +84,6 @@ gem 'enum_help'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 # デプロイ
 gem 'dotenv-rails'
 group :production do
