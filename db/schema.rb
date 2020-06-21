@@ -82,8 +82,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_073719) do
     t.datetime "deleted_at"
     t.string "uid"
     t.string "provider"
-    t.string "nickname"
-    t.string "location"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

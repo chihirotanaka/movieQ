@@ -12,29 +12,17 @@ class User < ApplicationRecord
 
  #sns omniauth
 
-    def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
-
-    unless user
-      user = User.create(
-        user_id:      auth.user_id,
-        provider: auth.provider,
-        email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20],
-        image: auth.info.image,
-        name: auth.info.name,
-        nickname: auth.info.nickname,
-        location: auth.info.location
-      )
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.name
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
+      user.image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
+      user.image = auth.info.image.gsub("picture","picture?type=large") if user.provider == "facebook"
     end
-
-    user
   end
-
-  private
-	  def self.dummy_email(auth)
-	    "#{auth.user_id}-#{auth.provider}@example.com"
-	  end
-	end
+end
 
 
