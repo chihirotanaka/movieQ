@@ -80,6 +80,8 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'enum_help'
+gem 'omniauth'
+gem 'omniauth-twitter'
 # デプロイ
 gem 'dotenv-rails'
 group :production do
