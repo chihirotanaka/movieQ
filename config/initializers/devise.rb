@@ -296,6 +296,9 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  config.omniauth :facebook, ENV['FACEBOOK_CONSUMER_ID'], ENV['FACEBOOK_SECRET_KEY']
-  config.omniauth :twitter, ENV['TWITTER_SECRET_KEY'], ENV['TWITTER_SECRET_KEY']
+  #config.omniauth :twitter, 'FaV307phzli4cJcuyMO5e35EE', 'GHOZYXq0xNMhFBZHNjxiQ8NY4Iqb4kdM33rEygCarlVON6vU7u' ,callback_url: "http://localhost:3000/users/auth/twitter/callback"
+  #config.omniauth :twitter, 'uk679KIjPQRQSDliHmtsJtrVO', 'OFid6VXrpUVCmPbPFxpdPzP6TilXnUB7d90xdWvSkBla2kO2NB' ,callback_url: "http://localhost:3000/users/auth/twitter/callback"
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_ID'], ENV['TWITTER_SECRET_KEY'],callback_url: "http://127.0.0.1:3000/users/auth/twitter/callback"
+  config.omniauth :facebook, ENV['FACEBOOK_CONSUMER_ID'], ENV['FACEBOOK_SECRET_KEY'],callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :google_oauth2, ENV['GOOGLE_CONSUMER_ID'], ENV['GOOGLE_SECRET_KEY'], skip_jwt: true
 end
