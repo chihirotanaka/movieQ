@@ -23,8 +23,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-  	@user.destroy
-  	redirect_to root_path
+    if @user == current_user
+  	   @user.destroy
+  	   redirect_to root_path
+    else
+       render 'root_path'
   end
 
   private

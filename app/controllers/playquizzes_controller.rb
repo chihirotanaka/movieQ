@@ -26,13 +26,12 @@ class PlayquizzesController < ApplicationController
       # 正解処理
       session[:result][session[:quiz_num]]= true
       @quiz.result = "正解!"
-      @movie = @quiz.movie
     else
       # 不正解処理
       session[:result][session[:quiz_num]]= false
       @quiz.result = "不正解.."
-      @movie = @quiz.movie
     end
+    @movie = @quiz.movie
   end
 
   def total_quiz
